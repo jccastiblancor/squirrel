@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./main.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#problema">Descripcion del problema</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#eventos">Eventos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#correlacion">Correlación eventos</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="container">
+        <h1>Entrega Squirrel</h1>
+        <section id="problema">
+          <h2>Descripción del problema</h2>
+          <p>
+            Every now and then, usually between 8 p.m. and 10 p.m., Jacques
+            finds himself transforming into a small furry rodent with a bushy
+            tail.
+          </p>
+          <p>
+            On one hand, Jacques is quite glad that he doesn’t have classic
+            lycanthropy. Turning into a squirrel does cause fewer problems than
+            turning into a wolf. Instead of having to worry about accidentally
+            eating the neighbor (that would be awkward), he worries about being
+            eaten by the neighbor’s cat. After two occasions where he woke up on
+            a precariously thin branch in the crown of an oak, naked and
+            disoriented, he has taken to locking the doors and windows of his
+            room at night and putting a few walnuts on the floor to keep himself
+            busy.
+          </p>
+          <p>
+            That takes care of the cat and tree problems. But Jacques would
+            prefer to get rid of his condition entirely. The irregular
+            occurrences of the transformation make him suspect that they might
+            be triggered by something. For a while, he believed that it happened
+            only on days when he had been near oak trees. But avoiding oak trees
+            did not stop the problem.
+          </p>
+          <p>
+            Switching to a more scientific approach, Jacques has started keeping
+            a daily log of everything he does on a given day and whether he
+            changed form. With this data he hopes to narrow down the conditions
+            that trigger the transformations.
+          </p>
+          <p>
+            From the set of data2 determine which events are more and less
+            correlated with the transformation of Jacques. Specifically, use the
+            Matthews Correlation Coefficient (MCC)3 to determine the correlation
+            between the events. The MCC is defined as follows: $$MCC = {TP
+            \times TN - FP \times FN \over \sqrt{(TP + FP)(TP + FN)(TN + FP)(TN
+            + FN)}}.$$
+          </p>
+          <p>
+            A sample of the confusion matrix is presented above. The matrix
+            provides the relation between the conversion into a squirrel and
+            eating pizza.
+          </p>
+          <img
+            class="rounded mx-auto d-block"
+            src="img/cm.jpeg"
+            alt="confusion marix ex"
+          />
+          <p>
+            The values for TP (true positives), TN (true negatives), FP (false
+            positives), and FN (false negatives) are the following:
+          </p>
+          <ul>
+            <li>true positives (TP) = 1</li>
+            <li>true negatives (TN) =76</li>
+            <li>false positives (FP) = 4</li>
+            <li>and false negatives (FN) = 9</li>
+          </ul>
+        </section>
+        <section id="eventos">
+          <h2>Eventos</h2>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Events</th>
+                <th scope="col">Squirrel</th>
+              </tr>
+            </thead>
+            Eventos
+            <tbody id="toRender"></tbody>
+          </table>
+        </section>
+
+        <section id="correlacion">
+          <h2>Correlación de eventos</h2>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Event</th>
+                <th scope="col">Correlation</th>
+              </tr>
+            </thead>
+            Eventos
+            <tbody id="renderEvents"></tbody>
+          </table>
+        </section>
+      </div>
+    </main>
+
+    <script src="main.js"></script>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
+    <script type="text/x-mathjax-config">
+      //Note the above <script> attribute type="text/x-mathjax-config"
+          MathJax.Hub.Config({
+              tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
+          });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+{
+  "name": "squirrel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run lite",
+    "dev": "npm run lite",
+    "lite": "lite-server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "liteserver": "^0.3.0"
+  },
+  "devDependencies": {
+    "lite-server": "^2.5.4"
+  }
+}
